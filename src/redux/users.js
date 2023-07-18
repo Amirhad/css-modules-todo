@@ -1,0 +1,25 @@
+const initialState = {
+    users: [],
+    loading: false,
+  };
+  
+  export const usersReducer = (state = initialState, action) => {
+    switch (action.type) {
+      case "users/load/start":
+        return {
+          ...state,
+          loading: true,
+        };
+  
+      case "users/load/success":
+        return {
+          ...state,
+          users:action.payload,
+          loading: true,
+        };
+  
+      default:
+        return state;
+    }
+  };
+  
